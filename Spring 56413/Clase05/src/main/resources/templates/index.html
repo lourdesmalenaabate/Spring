@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Pagina de Inicio</title>
+</head>
+<body>
+	<div>
+		<h1>Agregar Usuarios</h1>
+		<form action="/agregarForm" method="post">
+
+			<input type="email" id="correo" name="correo"
+				placeholder="correo@dominio.com" required> <br> <input
+				type="password" id="clave" name="clave" placeholder="1234" required>
+			<br>
+			<button type="submit">Agregar</button>
+			<button type="reset">Limpiar</button>
+		</form>
+	</div>
+	<div>
+		<h1>Usuarios Registrados</h1>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Correo</th>
+				<th>Clave</th>
+				<th>Eliminar</th>
+			</tr>
+			{{#usuarios}}
+			<tr>
+				<td>{{id}}</td>
+				<td>{{correo}}</td>
+				<td>{{clave}}</td>
+				<td><a href="/eliminar/{{id}}">eliminar</a></td>
+			</tr>
+			{{/usuarios}}
+		</table>
+
+
+
+	</div>
+
+</body>
+</html>
